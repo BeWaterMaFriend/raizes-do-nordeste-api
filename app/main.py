@@ -5,6 +5,8 @@ from app.domain.base import Base
 from app.domain.usuario import Usuario
 from app.api.auth import router as auth_router
 from app.api.teste import router as teste_router
+from app.api.produto import router as produto_router
+from app.domain.produto import Produto
 
 app = FastAPI(
     title="Raízes do Nordeste API",
@@ -15,7 +17,7 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(auth_router)
 app.include_router(teste_router)
-
+app.include_router(produto_router)
 
 @app.get("/")
 def root():
