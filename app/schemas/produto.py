@@ -15,4 +15,6 @@ class ProdutoResponse(BaseModel):
     preco: float
     ativo: bool
 
-    model_config = ConfigDict(from_attributes=True)
+    model_config = ConfigDict(
+        from_attributes=True
+    )
