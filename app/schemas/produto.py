@@ -18,3 +18,9 @@ class ProdutoResponse(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )
+
+class ProdutoUpdate(BaseModel):
+    nome: str
+    descricao: str
+    preco: float
+    ativo: bool
