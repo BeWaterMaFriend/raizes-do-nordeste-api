@@ -71,6 +71,7 @@ def atualizar_produto(
     produto.descricao = dados.descricao
     produto.preco = dados.preco
     produto.ativo = dados.ativo
+    produto.quantidade_estoque = dados.quantidade_estoque
 
     db.commit()
     db.refresh(produto)
@@ -114,11 +115,12 @@ def criar_produto(
     usuario=Depends(get_admin)
 ):
     novo_produto = Produto(
-        nome=produto.nome,
-        descricao=produto.descricao,
-        preco=produto.preco,
-        ativo=produto.ativo
-    )
+    nome=produto.nome,
+    descricao=produto.descricao,
+    preco=produto.preco,
+    ativo=produto.ativo,
+    quantidade_estoque=produto.quantidade_estoque
+)
 
     db.add(novo_produto)
     db.commit()

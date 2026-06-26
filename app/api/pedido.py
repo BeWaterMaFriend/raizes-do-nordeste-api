@@ -109,6 +109,12 @@ def adicionar_item(
             detail="Produto não encontrado."
         )
 
+    if produto.quantidade_estoque < dados.quantidade:
+        raise HTTPException(
+            status_code=409,
+            detail="Estoque insuficiente."
+        )
+
     item = ItemPedido(
         pedido_id=pedido.id,
         produto_id=produto.id,
@@ -116,7 +122,11 @@ def adicionar_item(
     )
 
     db.add(item)
+
+    produto.quantidade_estoque -= dados.quantidade
+
     pedido.valor_total += produto.preco * dados.quantidade
+
     db.commit()
 
     return {

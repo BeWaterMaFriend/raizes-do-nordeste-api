@@ -6,6 +6,7 @@ class ProdutoCreate(BaseModel):
     descricao: str
     preco: float
     ativo: bool = True
+    quantidade_estoque: int
 
 
 class ProdutoResponse(BaseModel):
@@ -14,13 +15,16 @@ class ProdutoResponse(BaseModel):
     descricao: str
     preco: float
     ativo: bool
+    quantidade_estoque: int
 
     model_config = ConfigDict(
         from_attributes=True
     )
+
 
 class ProdutoUpdate(BaseModel):
     nome: str
     descricao: str
     preco: float
     ativo: bool
+    quantidade_estoque: int

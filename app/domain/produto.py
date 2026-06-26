@@ -16,3 +16,5 @@ class Produto(Base):
     preco: Mapped[float] = mapped_column(Float)
 
     ativo: Mapped[bool] = mapped_column(Boolean, default=True)
+
+    quantidade_estoque: Mapped[int] = mapped_column(default=0)
