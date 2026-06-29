@@ -14,3 +14,6 @@ class PedidoResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+class PedidoStatusUpdate(BaseModel):
+    status: str

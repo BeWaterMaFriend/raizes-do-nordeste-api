@@ -51,7 +51,9 @@ def register(
         nome=usuario.nome,
         email=usuario.email,
         senha_hash=gerar_hash(usuario.senha),
-        tipo_usuario=usuario.perfil
+        tipo_usuario=usuario.perfil,
+        aceite_termos_lgpd=usuario.aceite_termos_lgpd, # Adicione esta linha!
+        pontos_fidelidade=0 # Começa com zero pontos
     )
 
     db.add(novo_usuario)
@@ -62,9 +64,9 @@ def register(
         id=novo_usuario.id,
         nome=novo_usuario.nome,
         email=novo_usuario.email,
-        perfil=novo_usuario.tipo_usuario
+        perfil=novo_usuario.tipo_usuario,
+        pontos_fidelidade=novo_usuario.pontos_fidelidade
     )
-
 
 @router.post(
     "/login",
