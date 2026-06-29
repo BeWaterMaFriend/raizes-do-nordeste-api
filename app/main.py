@@ -9,6 +9,7 @@ from app.domain.base import Base
 from app.api.auth import router as auth_router
 from app.api.teste import router as teste_router
 from app.api.produto import router as produto_router
+from app.api.fidelidade import router as fidelidade_router 
 
 app = FastAPI(
     title="Raízes do Nordeste API",
@@ -17,13 +18,9 @@ app = FastAPI(
 
 Base.metadata.create_all(bind=engine)
 
-# ==========================================
-# EXCEPTION HANDLERS (PADRÃO DE ERRO EXIGIDO)
-# ==========================================
 
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
-    # Mapeia o status code para um nome de erro legível
     error_mapping = {
         400: "BAD_REQUEST",
         401: "UNAUTHORIZED",
@@ -69,6 +66,7 @@ app.include_router(auth_router)
 app.include_router(teste_router)
 app.include_router(produto_router)
 app.include_router(pedido_router)
+app.include_router(fidelidade_router)
 
 @app.get("/")
 def root():
