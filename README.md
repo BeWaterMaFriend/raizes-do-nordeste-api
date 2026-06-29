@@ -1,19 +1,40 @@
-# Raízes do Nordeste API - Trilha Back-End
+# Raizes do Nordeste API - Trilha Back-End
 
-Projeto desenvolvido em FastAPI para gestão de pedidos multicanal (App, Totem, Balcão), atendendo a todos os requisitos do Projeto Multidisciplinar.
+Este projeto consiste em uma API RESTful desenvolvida em Python com FastAPI para o gerenciamento de pedidos de uma rede de alimentação. O sistema oferece funcionalidades de multicanalidade, controle de estoque, fidelidade e integração simulada (mock) de pagamentos, atendendo aos requisitos acadêmicos da disciplina de Projeto Multidisciplinar.
 
----
+## Tecnologias Utilizadas
+* Linguagem: Python 3.11+
+* Framework: FastAPI
+* Banco de Dados: PostgreSQL
+* ORM: SQLAlchemy
+* Containerização: Docker
+* Validação: Pydantic
 
-## Guia Rápido de Execução
+## Pré-requisitos
+Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+* Git (para clonagem do repositório)
+* Python 3.11 ou superior
+* Docker Desktop (ou Docker Engine com Docker Compose)
 
-Siga os passos abaixo no seu terminal para configurar, instalar e rodar o projeto do zero:
+## Guia de Execução
 
+Siga os passos abaixo em seu terminal para configurar o ambiente e rodar o projeto:
+
+### 1. Preparação
+Certifique-se de que o Docker Desktop esteja aberto e em execução.
+
+### 2. Instalação
 ```bash
-# 1. Crie e ative o ambiente virtual
+# Clone o repositório e acesse a pasta
+git clone <seu-link-aqui>
+cd raizes-do-nordeste-api
+
+# Crie e ative o ambiente virtual
 python -m venv .venv
+# No Windows:
 .venv\Scripts\activate
 
-# 2. Instale as dependências da API
+# Instale as dependências
 pip install -r requirements.txt
 
 # 3. Suba o Banco de Dados PostgreSQL (O Docker precisa estar aberto)
