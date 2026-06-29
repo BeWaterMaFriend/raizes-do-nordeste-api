@@ -28,7 +28,7 @@ uvicorn app.main:app --reload
 
 > **PASSO FINAL (SEED):** Com a API rodando no terminal acima, abra um **segundo terminal** na mesma pasta (com o `.venv` ativado) e execute o script abaixo para popular o banco de dados com os produtos de teste:
 > ```bash
-> python app/seed.py
+> python -m app.seed
 > ```
 
 ---
