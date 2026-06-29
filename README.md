@@ -26,7 +26,7 @@ Certifique-se de que o Docker Desktop esteja aberto e em execução.
 ### 2. Instalação
 ```bash
 # Clone o repositório e acesse a pasta
-git clone <seu-link-aqui>
+git clone https://github.com/BeWaterMaFriend/raizes-do-nordeste-api.git
 cd raizes-do-nordeste-api
 
 # Crie e ative o ambiente virtual
